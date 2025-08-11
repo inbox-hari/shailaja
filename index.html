@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shailaja Padindala — Film Director & Writer</title>
+  <meta name="description" content="Official profile of Shailaja Padindala — Film Director & Writer. Portfolio, films, background, talks & awards, press, and contact." />
+  <style>
+    /* ---------- Theme & Base ---------- */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --bg:#0b0c10; --card:#12131a; --text:#eaeaf0; --muted:#b9bbca;
+      --brand:#66d1ff; --brand-2:#7bf7c8; --ring:#2f6fff33; --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:18px; --gap:22px; --max:1150px;
+      color-scheme: dark light; scroll-behavior:smooth;
+    }
+    body[data-theme="light"]{
+      --bg:#f7f7fb; --card:#fff; --text:#151625; --muted:#515678;
+      --brand:#0b72ff; --brand-2:#00b894; --ring:#0b72ff22; --shadow:0 10px 30px rgba(12,24,48,.12);
+    }
+    html,body{height:100%}
+    body{margin:0; background:
+      radial-gradient(1200px 800px at 80% -10%, #214 0%, transparent 60%),
+      radial-gradient(800px 600px at -10% 20%, #144 0%, transparent 60%), var(--bg);
+      color:var(--text); font:500 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans","Helvetica Neue",Arial;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(100%,var(--max)); margin:0 auto; padding:0 20px}
+    .grid{display:grid; gap:var(--gap)}
+
+    /* ---------- Header / Nav ---------- */
+    header{position:sticky; top:0; z-index:50;
+      background:color-mix(in oklab, var(--bg), black 10%);
+      backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid color-mix(in oklab, var(--text), transparent 92%);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    /* no logo box */
+    .separator{border-left:1px solid color-mix(in oklab, var(--text), transparent 80%); height:20px; margin:0 12px}
+    nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0; align-items:center}
+    nav a{color:var(--text); opacity:.9; font-weight:600}
+    nav a:hover{opacity:1}
+    .theme-toggle,.menu-btn{
+      border:1px solid color-mix(in oklab, var(--text), transparent 75%);
+      background:color-mix(in oklab, var(--card), transparent 12%);
+      color:var(--text); border-radius:999px; padding:8px 12px; cursor:pointer; box-shadow:var(--shadow)
+    }
+    .menu-btn{display:none}
+    @media (max-width: 960px){
+      nav ul{display:none; position:absolute; right:20px; top:62px; flex-direction:column;
+        background:var(--card); border:1px solid color-mix(in oklab, var(--text), transparent 90%);
+        padding:14px; border-radius:14px; width:min(90vw,320px)}
+      nav ul.open{display:flex}
+      .menu-btn{display:inline-flex; align-items:center; gap:8px}
+      .separator{display:none} /* hide separators in mobile dropdown */
+    }
+
+    /* ---------- Banner Above Hero ---------- */
+    .banner-wrap{background:linear-gradient(180deg, #0000, #0002)}
+    .banner{display:block; width:100%; height:auto; max-height:460px; object-fit:cover}
+
+    /* ---------- Hero (text only) ---------- */
+    .hero{padding:40px 0 30px}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:99px;
+      border:1px solid color-mix(in oklab, var(--text), transparent 86%);
+      background:color-mix(in oklab, var(--card), transparent 10%); font-size:13px; color:var(--muted)}
+    h1{font-size:clamp(36px,5vw,56px); line-height:1.08; margin:10px 0 12px; letter-spacing:-.02em}
+    .lead{font-size:clamp(16px,2.1vw,20px); color:var(--muted); max-width:70ch}
+    .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px;
+      border:1px solid color-mix(in oklab, var(--text), transparent 86%);
+      background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 6%), color-mix(in oklab, var(--card), transparent 0%));
+      color:var(--text); font-weight:700; box-shadow:var(--shadow); cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#0b0c10; border:none}
+
+    /* ---------- Sections ---------- */
+    section{padding:56px 0}
+    .section-head{display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:18px}
+    .section-head h2{margin:0; font-size:clamp(24px,4vw,32px)}
+    .subtle{color:var(--muted)}
+    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--text), transparent 90%); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{font-size:12px; color:var(--muted); border:1px solid color-mix(in oklab, var(--text), transparent 86%); border-radius:999px; padding:4px 8px}
+
+    .tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px}
+    .tab{padding:8px 12px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text), transparent 86%);
+      background:color-mix(in oklab, var(--card), transparent 8%)}
+
+    .list{display:grid; gap:16px}
+    .embed{aspect-ratio:16/9; width:100%; border:1px solid color-mix(in oklab, var(--text), transparent 86%); border-radius:14px; overflow:hidden}
+
+    /* ---------- Footer / Util ---------- */
+    footer{padding:22px 0 60px; color:var(--muted); text-align:center}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    #toTop{position:fixed; right:18px; bottom:18px; display:none}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span>Shailaja Padindala</span>
+        <div class="separator" aria-hidden="true"></div>
+        <a href="#home">Home</a>
+      </div>
+      <nav aria-label="Primary">
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+        <ul id="menu" role="menu">
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#films">Film Director & Writer</a></li>
+          <li role="none"><a role="menuitem" href="#talks">Talks & Awards</a></li>
+          <li role="none"><a role="menuitem" href="#more">More</a></li>
+          <li role="none"><a role="menuitem" href="#vivekaa">Vivekaa Media House</a></li>
+          <li role="none"><a role="menuitem" href="#press">Press</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Get in touch</a></li>
+          <div class="separator" aria-hidden="true"></div>
+          <li role="none"><button class="theme-toggle" id="themeToggle" aria-live="polite" aria-pressed="false" title="Toggle theme">🌗 Theme</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner above hero -->
+  <div class="banner-wrap">
+    <!-- Replace src with your hosted banner URL or local filename -->
+    <img class="banner" src="images/hero.jpg" alt="Shailaja Padindala banner" />
+  </div>
+
+  <main id="main">
+    <!-- Home / Hero -->
+    <section id="home" class="hero">
+      <div class="container">
+        <span class="tag">🎬 Film Director & Writer</span>
+        <h1>Stories that challenge norms and centre the female gaze.</h1>
+        <p class="lead">Shailaja Padindala is an independent filmmaker exploring sexuality, class, and identity within heteronormative societies—through intimate, fearless cinema and socially conscious media.</p>
+        <div class="cta">
+          <a class="btn primary" href="#films">Explore films</a>
+          <a class="btn" href="#press">Read press</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About</h2>
+          <span class="subtle">Background</span>
+        </div>
+        <article class="card">
+          <p>“My artistic journey began with brushstrokes and clay as a Visual Arts student, where I immersed myself in painting, sculpture, and the rich tapestry of Art History. This passion naturally drew me toward the moving image, leading to a post-grad shift into film making. I entered the media world in 2012 as a Television Video Producer, working under the mentorship of K Balakailasam. Through journalism and digital storytelling, I honed my visual voice.</p>
+          <p>My directorial debut, Short Memories of a Machine, was a raw, non-cinematic video piece that resonated with a young audience. Their insights deepened my understanding of Indian cinema's ground realities. Along the way, I discovered a generation choosing passion over convention—trading stethoscopes and circuit boards for the transformative world of art and culture.</p>
+          <p>In exploring why cinema holds such reverence—especially within digital media—I created a low-budget film to decode its economic mystique. What I found was clear: it’s not always the story, but stardom and branding that push films into crore-making territory.</p>
+          <p>Yet, as I absorbed powerful films from the Global South—void of stars, yet rich in substance—I realised that cinema had often become a vessel for fast profits, with much of India’s film revenue steeped in untraceable cash. This sparked a deeper vision: a system where art thrives within a co-operative business model, supported by public-sector values that secure livelihoods and rebuild the media economy.</p>
+          <p>I strive to produce cost-effective, inclusive content that invites marginalised voices—especially women—into cinema, breaking class and social barriers. My goal is a cultural shift, where art isn’t just a GDP booster, but a force that nurtures communities and enriches lives.”</p>
+        </article>
+
+        <div class="tabs" aria-label="About subsections">
+          <a class="tab" href="#digital-journalism">Digital Journalism</a>
+          <a class="tab" href="#visual-artist">Visual Artist</a>
+        </div>
+
+        <article id="digital-journalism" class="card">
+          <h3>Digital Journalism</h3>
+          <p>“In 2012, I began my journey as a broadcast journalist in Chennai under the mentorship of K. Balakailasam. Immersed in the unfiltered world of news visuals, I shed the rigidity of academic filmmaking—embracing a raw, honest style that continues to shape my cinematic voice.”</p>
+        </article>
+
+        <article id="visual-artist" class="card">
+          <h3>Visual Artist</h3>
+          <p>I graduated in 2009 from Chitrakala Parishath, Bangalore, with a Bachelor's in Visual Arts, specialising in painting and sculpture. Immersed in both practice and art history, I found myself drawn to the moving image—a natural evolution of storytelling. This curiosity led me to pursue post-graduation in Cinematography at the LV Prasad Film & TV Academy in Chennai, where my canvas shifted from still frames to cinematic motion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Films -->
+    <section id="films">
+      <div class="container">
+        <div class="section-head">
+          <h2>Film Director & Writer</h2>
+          <span class="subtle">Selected works</span>
+        </div>
+        <article class="card">
+          <p>“My films are driven by the raw nature of sexuality trapped in a heteronormative society. I envision to unveil ‘female gaze’ as a genre.”</p>
+        </article>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:22px;">
+          <article class="card">
+            <h3>Memories of a Machine (2016)</h3>
+            <p>“Memories of a Machine is a 10-minute short film released in 2016, featuring a monologue of a woman recalling her sexual experience as a child. This film churned a wide debate about child sexuality with diverse perspectives emerging. The film travelled globally and won Best Film at the Fish & Chips Film Festival in Italy. This film today stands as a milestone in re-understanding the nature of sexuality, trauma, and response to trauma.”</p>
+            <div class="chips"><span class="chip">Short • 10m</span><span class="chip">Debate & Discourse</span></div>
+            <p><a href="#">Film link</a> · <a href="#">Press</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Naanu Ladies</h3>
+            <p>Naanu Ladies is Karnataka’s first lesbian feature film, winner of Best Queer Film at Seattle’s Tasveer Film Festival and at KASHISH International Queer Film Festival. The film attempts to re-understand class, love, and sexuality amid a heteronormative society.</p>
+            <p><a href="#">Trailer</a> · <a href="#">Press</a></p>
+            <div class="embed" aria-label="Making of Naanu Ladies">
+              <iframe src="https://drive.google.com/file/d/1gi5HMV574sxuYMvWLJ5RaRqUB6N1w7eg/preview" allow="autoplay; encrypted-media" allowfullscreen style="width:100%; height:100%; border:0"></iframe>
+            </div>
+          </article>
+
+          <article class="card" style="grid-column:1/-1">
+            <h3>Love and Let Love</h3>
+            <p>Presented by Pa. Ranjith via Neelam Social, <em>Love and Let Love</em> tells a powerful tale of a mother and daughter accidentally confronting their secret love affairs—standing in solidarity in a patriarchal society—told in just seven minutes and without a single dialogue.</p>
+            <p><a href="#">Film link</a> · <a href="#">Press</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talks & Awards -->
+    <section id="talks">
+      <div class="container">
+        <div class="section-head">
+          <h2>Talks & Awards</h2>
+          <span class="subtle">Highlights</span>
+        </div>
+        <div class="list">
+          <article class="card"><h3>TED Talk</h3><p>Video and details coming soon.</p></article>
+          <article class="card"><h3>Interviews</h3><p>Selected interviews and features — coming soon.</p></article>
+          <article class="card"><h3>Changemaker</h3><p>Recognised for inclusive storytelling and community engagement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- More -->
+    <section id="more">
+      <div class="container">
+        <div class="section-head">
+          <h2>More</h2>
+          <span class="subtle">Music Video • Mustache Under My Nose Ring • Actor</span>
+        </div>
+        <article class="card">
+          <h3>Music Video</h3>
+          <p>Single link retained. Watch here: <a href="#">Music video</a>.</p>
+        </article>
+        <article class="card">
+          <h3>Mustache Under My Nose Ring</h3>
+          <p>A bold, gender-neutral movement in fashion, beauty, and design—challenging norms and reimagining beauty beyond binaries, celebrating self-expression in all its raw, real, and radiant forms.</p>
+        </article>
+        <article class="card">
+          <h3>Actor</h3>
+          <p>Selected acting work — video embedded here.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Vivekaa Media House -->
+    <section id="vivekaa">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vivekaa Media House</h2>
+          <a class="btn" href="https://www.vivekaamediahouse.com" target="_blank" rel="noopener">Visit Website →</a>
+        </div>
+        <article class="card">
+          <p><strong>Branding, Website Design & Social Media Marketing.</strong> Vivekaa Media House caters to strategy, design, content, and campaigns across platforms. Select clients and work samples:</p>
+          <ul>
+            <li>Bengaluru Commissioner of Police — <a href="https://drive.google.com/drive/folders/1oLr7tzxZPJtkUD9z87fyEzVKzPzZSqKg" target="_blank" rel="noopener">Drive folder</a></li>
+            <li>American Food Blogs — <a href="https://drive.google.com/drive/folders/1fCLmruf2aMXzU7X4ophz_8hV22QzJ7F2" target="_blank" rel="noopener">Drive folder</a></li>
+            <li>Asli Kahani — <a href="https://www.youtube.com/watch?v=TIkbyZpKS4M" target="_blank" rel="noopener">YouTube</a></li>
+            <li>Asianet — <a href="https://drive.google.com/file/d/1UbAqzlkcSFTrDQILDR5zAupTaOh3-7qA/view?usp=drive_link" target="_blank" rel="noopener">Drive</a></li>
+            <li>Malabar Gold — <a href="https://drive.google.com/file/d/1IeSsyQ6ivJ2x-ndpjTp_pGMSgP2DkEN1/view" target="_blank" rel="noopener">Drive</a></li>
+            <li>Property Branding — <a href="https://www.youtube.com/watch?v=11mbWAwqZdk" target="_blank" rel="noopener">YouTube</a></li>
+            <li>Product Shoot — <a href="https://drive.google.com/drive/folders/1UQL-J1zDb5AMFUHjHjkRnC0enTwuRFLc" target="_blank" rel="noopener">Drive folder</a></li>
+            <li>Music Video — <a href="https://drive.google.com/file/d/17USORi1vo3X7Vb8BvVtQ2SoxCN5ViN7H/view?usp=drivesdk" target="_blank" rel="noopener">Drive</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Press -->
+    <section id="press">
+      <div class="container">
+        <div class="section-head"><h2>Press</h2><span class="subtle">Selected coverage</span></div>
+        <div class="list">
+          <article class="card"><h3>Feature/Interview</h3><p>Links and excerpts can be added here.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><h2>Get in Touch</h2><span class="subtle">Email only</span></div>
+        <article class="card">
+          <p>Email: <a href="mailto:hello@shailajapadindala.in">hello@shailajapadindala.in</a></p>
+          <p class="subtle">For film enquiries, collaborations, and speaking requests.</p>
+        </article>
+      </div>
+    </section>
+
+    <button id="toTop" class="btn" aria-label="Back to top">↑</button>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Shailaja Padindala. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const btnTheme = document.getElementById('themeToggle');
+    const pref = localStorage.getItem('theme');
+    if(pref){ document.body.setAttribute('data-theme', pref); btnTheme?.setAttribute('aria-pressed', String(pref==='light')); }
+    btnTheme?.addEventListener('click', ()=>{
+      const next = document.body.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btnTheme.setAttribute('aria-pressed', String(next==='light'));
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn?.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    menu?.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{
+      menu.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded','false');
+    }));
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    const onScroll = () => { toTop.style.display = window.scrollY > 600 ? 'inline-flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    toTop.addEventListener('click', ()=> window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
